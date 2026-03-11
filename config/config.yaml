@@ -113,27 +113,38 @@ rss:
   # - 正整数：覆盖全局设置，只推送此天数内的文章
   # - 0：禁用此频道的新鲜度过滤，推送所有文章
   feeds:
-    - id: "hacker-news"
-      name: "Hacker News"
-      url: "https://hnrss.org/frontpage"
-      # max_age_days: 1               # 示例：只推送1天内的文章
+    # ── 中文 AI 专业媒体 ──────────────────────────────────────
+    - id: "jiqizhixin"
+      name: "机器之心"
+      url: "https://www.jiqizhixin.com/rss.xml"
+      max_age_days: 2
 
-    - id: "ruanyifeng"
-      name: "阮一峰的网络日志"
-      url: "http://www.ruanyifeng.com/blog/atom.xml"
-      # max_age_days: 7               # 示例：推送7天内的文章（更新较慢的博客）
-    
-    - id: "yahoo-finance"
-      name: "雅虎财经"
-      url: "https://finance.yahoo.com/news/rssindex"
-      enabled: false                  # 禁用
+    - id: "qbitai"
+      name: "量子位"
+      url: "https://www.qbitai.com/feed"
+      max_age_days: 2
 
-    # 自定义源示例
-    # - id: "custom-feed"
-    #   name: "自定义源"
-    #   url: "https://example.com/feed.xml"
-    #   enabled: false
-    #   max_age_days: 0               # 示例：禁用过滤，推送所有文章
+    # ── 英文高质量 AI Newsletter ──────────────────────────────
+    - id: "tldr-ai"
+      name: "TLDR AI"
+      url: "https://tldr.tech/ai/rss"
+      max_age_days: 3
+
+    - id: "huggingface"
+      name: "HuggingFace Blog"
+      url: "https://huggingface.co/blog/feed.xml"
+      max_age_days: 7               # 更新较慢，放宽到7天
+
+    # ── 开源项目发现 ──────────────────────────────────────────
+    - id: "paperswithcode"
+      name: "Papers with Code"
+      url: "https://paperswithcode.com/latest/rss"
+      max_age_days: 3
+
+    - id: "hacker-news-ai"
+      name: "Hacker News AI"
+      url: "https://hnrss.org/newest?q=AI+LLM+agent+video+audio&points=80"
+      max_age_days: 2               # 高质量讨论，控制在2天内
 
 
 # ===============================================================
@@ -170,7 +181,7 @@ report:
 
   rank_threshold: 5                   # 排名高亮阈值
 
-  max_news_per_keyword: 0             # 每个关键词最大显示数量（0=不限制）
+  max_news_per_keyword: 5             # 每个关键词最大显示数量（0=不限制）
 
 
 # ===============================================================
@@ -201,7 +212,7 @@ display:
   # 控制各区域是否启用（配合 region_order 使用）
   regions:
     hotlist: true                     # 热榜区域（关键词匹配的热点新闻）
-    new_items: false                   # 新增热点区域（含热榜新增 + RSS 新增）
+    new_items: true                    # 新增热点区域（含热榜新增 + RSS 新增）
                                       # 注：热点词汇统计中的新增标记🆕不受此配置影响
 
     rss: true                         # RSS 订阅区域
@@ -443,7 +454,7 @@ ai_analysis:
                                       # GitHub Action 部署默认推送约 20 次（每小时推送一次）， 约 0.1 元/天
                                       # Docker 部署默认推送 48 次(每半小时推送一次)， 约 0.2 元/天
 
-  include_rss: false                # 是否包含 RSS 内容进行分析
+  include_rss: true                 # 是否包含 RSS 内容进行分析
   
   include_standalone: true          # 是否将独立展示区数据纳入 AI 分析（只需上方 display 区的 standalone 配置了平台/RSS 即可）
 
