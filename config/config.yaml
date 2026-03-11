@@ -114,37 +114,42 @@ rss:
   # - 0：禁用此频道的新鲜度过滤，推送所有文章
   feeds:
     # ── 中文 AI 专业媒体 ──────────────────────────────────────
-    - id: "jiqizhixin"
-      name: "机器之心"
-      url: "https://www.jiqizhixin.com/rss.xml"
-      max_age_days: 2
-
     - id: "qbitai"
       name: "量子位"
       url: "https://www.qbitai.com/feed"
       max_age_days: 2
 
-    # ── 英文高质量 AI Newsletter ──────────────────────────────
-    - id: "tldr-ai"
-      name: "TLDR AI"
-      url: "https://tldr.tech/ai/rss"
-      max_age_days: 3
+    - id: "36kr-ai"
+      name: "36氪 AI"
+      url: "https://36kr.com/feed"
+      max_age_days: 2
 
+    # ── 英文高质量 AI Newsletter ──────────────────────────────
     - id: "huggingface"
       name: "HuggingFace Blog"
       url: "https://huggingface.co/blog/feed.xml"
       max_age_days: 7               # 更新较慢，放宽到7天
 
-    # ── 开源项目发现 ──────────────────────────────────────────
-    - id: "paperswithcode"
-      name: "Papers with Code"
-      url: "https://paperswithcode.com/latest/rss"
+    - id: "mit-ai"
+      name: "MIT Technology Review AI"
+      url: "https://www.technologyreview.com/topic/artificial-intelligence/feed"
       max_age_days: 3
 
+    - id: "therundown-ai"
+      name: "The Rundown AI"
+      url: "https://www.therundown.ai/feed"
+      max_age_days: 3
+
+    # ── 开源项目发现 ──────────────────────────────────────────
     - id: "hacker-news-ai"
       name: "Hacker News AI"
-      url: "https://hnrss.org/newest?q=AI+LLM+agent+video+audio&points=80"
-      max_age_days: 2               # 高质量讨论，控制在2天内
+      url: "https://hnrss.org/newest?q=AI+LLM+agent&points=50"
+      max_age_days: 2               # 降低阈值至50分，保证有内容
+
+    - id: "hacker-news-show"
+      name: "Hacker News Show HN"
+      url: "https://hnrss.org/show?points=30"
+      max_age_days: 2               # Show HN 项目展示，开源工具发现
 
 
 # ===============================================================
