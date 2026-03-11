@@ -288,11 +288,17 @@ class AIAnalyzer:
                         # 来源
                         source = t.get("source_name", t.get("source", ""))
 
+                        # URL（优先 mobile_url，兼容 mobileUrl 字段名）
+                        url = t.get("mobile_url", "") or t.get("mobileUrl", "") or t.get("url", "")
+
                         # 构建行
                         if source:
                             line = f"- [{source}] {title}"
                         else:
                             line = f"- {title}"
+
+                        if url:
+                            line += f" | URL:{url}"
 
                         # 始终显示简化格式：排名范围 + 时间范围 + 出现次数
                         ranks = t.get("ranks", [])
@@ -345,14 +351,19 @@ class AIAnalyzer:
                         # 来源
                         source = t.get("source_name", t.get("feed_name", ""))
 
+                        # URL
+                        url = t.get("url", "")
+
                         # 发布时间
                         time_display = t.get("time_display", "")
 
-                        # 构建行：[来源] 标题 | 发布时间
+                        # 构建行：[来源] 标题 | URL | 发布时间
                         if source:
                             line = f"- [{source}] {title}"
                         else:
                             line = f"- {title}"
+                        if url:
+                            line += f" | URL:{url}"
                         if time_display:
                             line += f" | {time_display}"
                         rss_lines.append(line)

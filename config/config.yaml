@@ -141,12 +141,12 @@ rss:
     # ── 开源项目发现 ──────────────────────────────────────────
     - id: "hacker-news-ai"
       name: "Hacker News AI"
-      url: "https://hnrss.org/newest?q=AI+LLM+agent&points=50"
-      max_age_days: 2               # 降低阈值至50分，保证有内容
+      url: "https://hnrss.org/newest?q=AI+LLM+agent+model&points=30"
+      max_age_days: 2               # 降低阈值至30分，确保有足够内容
 
     - id: "hacker-news-show"
       name: "Hacker News Show HN"
-      url: "https://hnrss.org/show?points=30"
+      url: "https://hnrss.org/show?points=20"
       max_age_days: 2               # Show HN 项目展示，开源工具发现
 
 
