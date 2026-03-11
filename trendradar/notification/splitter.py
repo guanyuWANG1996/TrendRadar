@@ -153,11 +153,7 @@ def split_content_into_batches(
         base_header += f"**时间：** {now.strftime('%Y-%m-%d %H:%M:%S')}\n"
         base_header += f"**类型：** {report_type}\n\n"
     elif format_type == "feishu":
-        base_header = f"**总新闻数：** {total_titles}\n"
-        base_header += ai_stats_line
-        base_header += f"**时间：** {now.strftime('%Y-%m-%d %H:%M:%S')}\n"
-        base_header += f"**类型：** {report_type}\n\n"
-        base_header += "---\n\n"
+        base_header = f"✨ AI 日报 · {now.strftime('%Y-%m-%d')}\n\n"
     elif format_type == "dingtalk":
         base_header = f"**总新闻数：** {total_titles}\n"
         base_header += ai_stats_line
