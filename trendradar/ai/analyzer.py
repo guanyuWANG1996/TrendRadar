@@ -458,7 +458,10 @@ class AIAnalyzer:
                 if not title:
                     continue
 
+                url = item.get("mobile_url", "") or item.get("mobileUrl", "") or item.get("url", "")
                 line = f"- {title}"
+                if url:
+                    line += f" | URL:{url}"
 
                 # 排名信息
                 ranks = item.get("ranks", [])
@@ -504,7 +507,10 @@ class AIAnalyzer:
                 if not title:
                     continue
 
+                url = item.get("url", "")
                 line = f"- {title}"
+                if url:
+                    line += f" | URL:{url}"
                 published_at = item.get("published_at", "")
                 if published_at:
                     line += f" | {published_at}"

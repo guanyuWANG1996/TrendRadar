@@ -229,9 +229,9 @@ display:
   #   - AI 分析：由 ai.include_standalone 开关控制，将完整数据送入 AI 做深度分析
   # 两者共享此处的平台/RSS 配置，但开关互相独立（可只开 AI 分析、不推送展示）
   standalone:
-    platforms: ["zhihu", "wallstreetcn-hot"]     # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
-    rss_feeds: []                     # RSS 源 ID 列表（如 ["hacker-news"]）
-    max_items: 20                     # 每个源最多展示条数（0=不限制）
+    platforms: ["baidu", "weibo", "zhihu", "thepaper", "cls-hot", "wallstreetcn-hot", "bilibili-hot-search", "douyin", "ifeng"]
+    rss_feeds: ["qbitai", "36kr-ai", "huggingface", "mit-ai", "therundown-ai", "hacker-news-ai", "hacker-news-show"]
+    max_items: 25                     # 每个源取前25条，全量不经关键词过滤，由 AI 自行筛选
 
 
 # ===============================================================
